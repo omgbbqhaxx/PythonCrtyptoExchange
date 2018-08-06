@@ -1,8 +1,8 @@
 # How to Build Your Own Cryptocurrency Exchange with python like binance
 
-Bu eğitimde python ile bir bitcoin veya ethereum cüzdanı nasıl yaratacağınızı ardından yarattığınız bu cüzdanlardan nasıl transfer yapacağınızı öğreneceksiniz.
+In this tutorial you will learn how to create a bitcoin and ethereum wallet with python and then transfer from those wallets you created.
 
-Aşağıda tüm bunları yaparken kullanacağımız kütüphaneleri ve eğtimde kullandığım komut satırlarını göreceksiniz.
+Below we'll use the libraries and the command lines that I use for training when we do all of this.
 
 # <img src="https://github.com/omgbbqhaxx/PythonCrtyptoExchange/blob/master/images/UdemyBanner2.png">
 
@@ -18,7 +18,7 @@ Aşağıda tüm bunları yaparken kullanacağımız kütüphaneleri ve eğtimde 
 
 ## Getting Started
 
-Öncelikle ubuntu sistemimizi güncelleyelim ve sistemimizi hazır hale getirelim.
+First, we will update our ubuntu system and make our system ready.
 
 ```shell
 sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install vim -y && sudo apt-get install python-dev -y && sudo apt-get install libevent-dev -y &&  sudo apt-get install python-virtualenv -y && apt-get install git -y
@@ -26,7 +26,7 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install vim -y
 
 
 
-## Install python last version..
+## First of all install python version 3.0+
 
 ```shell
 sudo apt-get install --reinstall language-pack-en -y
@@ -40,7 +40,7 @@ apt install python-pip
 pip install --upgrade virtualenv
 ```
 
-## Other configurations..
+## Ethereum configurations..
 
 We are using [pyethereum](https://github.com/ethereum/pyethereum), [web3py](http://web3py.readthedocs.io/en/stable/),
  [eth-utils](https://github.com/ethereum/eth-utils) libraries for ethereum.
