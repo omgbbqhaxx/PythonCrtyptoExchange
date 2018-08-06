@@ -6,16 +6,6 @@ Below we'll use the libraries and the command lines that I use for training when
 
 # <img src="https://github.com/omgbbqhaxx/PythonCrtyptoExchange/blob/master/images/UdemyBanner2.png">
 
-
-## Contact
-
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/cloudbank-github/)
-[![GitHub Issues](https://img.shields.io/badge/open%20issues-0-yellow.svg)](https://github.com/omgbbqhaxx/CloudBank/issues)
-
-- Report bugs, issues or feature requests using [GitHub issues](issues/new).
-
-
-
 ## Getting Started
 
 First, we will update our ubuntu system and make our system ready.
@@ -64,6 +54,15 @@ pipenv install requests
 
 ## Donations
   * My ethereum wallet : `0xFBd6f9704478104f0EF3F4f9834c3621210fE598`
+
+
+  ## Contact
+
+  [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/cloudbank-github/)
+  [![GitHub Issues](https://img.shields.io/badge/open%20issues-0-yellow.svg)](https://github.com/omgbbqhaxx/CloudBank/issues)
+
+  - Report bugs, issues or feature requests using [GitHub issues](issues/new).
+
 
 
 ## License
