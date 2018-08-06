@@ -50,6 +50,16 @@ pipenv install requests
 
 
 
+## Bitcoin configurations..
+
+We are using [bit](https://github.com/ofek/bit) libraty for bitcoin.
+
+```shell
+pip install bit
+```
+
+
+
 
 
 ## Donations
