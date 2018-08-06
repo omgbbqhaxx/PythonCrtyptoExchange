@@ -12,7 +12,7 @@ Aşağıda tüm bunları yaparken kullanacağımız kütüphaneleri ve eğtimde 
 [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/cloudbank-github/)
 [![GitHub Issues](https://img.shields.io/badge/open%20issues-0-yellow.svg)](https://github.com/omgbbqhaxx/CloudBank/issues)
 
-- Chat in [cloudbank-github channel on Gitter](https://gitter.im/cloudbank-github).
+- Chat in
 - Report bugs, issues or feature requests using [GitHub issues](issues/new).
 
 
@@ -43,11 +43,20 @@ pip install --upgrade virtualenv
 
 ## Other configurations..
 
+We are using [pyethereum](https://github.com/ethereum/pyethereum)  and   [web3py](http://web3py.readthedocs.io/en/stable/) libraries for ethereum.
+
 ```shell
 virtualenv -p python3 venv
 cd venv
 . bin/activate
-git clone thatproject.git
+git clone https://github.com/omgbbqhaxx/PythonCrtyptoExchange.git
+
+sudo apt-get install libssl-dev build-essential automake pkg-config libtool libffi-dev libgmp-dev libyaml-cpp-dev
+git clone https://github.com/ethereum/pyethereum/
+cd pyethereum
+python setup.py install
+
+
 pip install -r requirements.txt
 pipenv install requests
 ```
