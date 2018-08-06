@@ -50,6 +50,23 @@ pipenv install requests
 
 
 
+## How to create a ethereum wallet using python.
+
+
+```shell
+from ethereum import utils
+from eth_utils import address
+
+private_key = utils.sha3(os.urandom(4096))
+raw_address = utils.privtoaddr(private_key)
+addressif = address.to_normalized_address(raw_address)
+keyether = utils.encode_hex(private_key)
+key = Key()
+
+
+```
+
+
 ## Bitcoin configurations..
 
 We are using [bit](https://github.com/ofek/bit) libraty for bitcoin.
