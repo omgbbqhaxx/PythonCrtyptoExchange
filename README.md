@@ -2,13 +2,12 @@
 
 In this tutorial you will learn how to create a bitcoin and ethereum wallet with python and then transfer from those wallets you created.
 
-Below we'll use the libraries and the command lines that I use for training when we do all of this.
 
 # <img src="https://github.com/omgbbqhaxx/PythonCrtyptoExchange/blob/master/images/UdemyBanner2.png">
 
 ## Getting Started
 
-First, we will update our ubuntu system and make our system ready.
+First of all, we will update our ubuntu system and make our system ready.
 
 ```shell
 sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install vim -y && sudo apt-get install python-dev -y && sudo apt-get install libevent-dev -y &&  sudo apt-get install python-virtualenv -y && apt-get install git -y
@@ -56,12 +55,13 @@ pipenv install requests
 ```shell
 from ethereum import utils
 from eth_utils import address
+import os
 
 private_key = utils.sha3(os.urandom(4096))
 raw_address = utils.privtoaddr(private_key)
 addressif = address.to_normalized_address(raw_address)
 keyether = utils.encode_hex(private_key)
-key = Key()
+
 
 
 ```
