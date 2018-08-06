@@ -4,7 +4,7 @@ Bu eğitimde python ile bir bitcoin veya ethereum cüzdanı nasıl yaratacağın
 
 Aşağıda tüm bunları yaparken kullanacağımız kütüphaneleri ve eğtimde kullandığım komut satırlarını göreceksiniz.
 
-# <img src="https://raw.githubusercontent.com/kitao/pyxel/master/pyxel/examples/assets/pyxel_logo_152x64.png">
+# <img src="https://github.com/omgbbqhaxx/PythonCrtyptoExchange/blob/master/images/UdemyBanner2.png">
 
 
 ## Contact
