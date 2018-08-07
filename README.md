@@ -70,12 +70,11 @@ from web3 import Web3, HTTPProvider, IPCProvider
 from ethereum.transactions import Transaction
 web3 = Web3(HTTPProvider('https://api.myetherapi.com/eth'))
 
-tx = Transaction(0, 60000000000, 21000, targetwallet, 0.01, "").sign('yourprivatekey')
+amountexample = Web3.toWei(0.001, 'ether')
+tx = Transaction(0, 60000000000, 21000, targetwallet, amountexample, "").sign('yourprivatekey')
 print(tx.to_dict())
 raw_tx = rlp.encode(tx)
-print("raw_tx", raw_tx)
 raw_tx_hex = web3.toHex(raw_tx)
-print("raw_tx_hex", raw_tx_hex)
 web3.eth.sendRawTransaction(raw_tx_hex)
 ```
 
