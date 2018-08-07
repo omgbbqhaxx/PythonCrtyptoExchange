@@ -49,7 +49,7 @@ pipenv install requests
 
 
 
-## How to create a ethereum wallet using python.
+## How to create an ethereum wallet using python.
 
 
 ```shell
@@ -61,11 +61,23 @@ private_key = utils.sha3(os.urandom(4096))
 raw_address = utils.privtoaddr(private_key)
 addressif = address.to_normalized_address(raw_address)
 keyether = utils.encode_hex(private_key)
-
-
-
 ```
 
+
+## How to send ethereum using python.
+```shell
+from web3 import Web3, HTTPProvider, IPCProvider
+from ethereum.transactions import Transaction
+web3 = Web3(HTTPProvider('https://api.myetherapi.com/eth'))
+
+tx = Transaction(0, 60000000000, 21000, targetwallet, 0.01, "").sign('yourprivatekey')
+print(tx.to_dict())
+raw_tx = rlp.encode(tx)
+print("raw_tx", raw_tx)
+raw_tx_hex = web3.toHex(raw_tx)
+print("raw_tx_hex", raw_tx_hex)
+web3.eth.sendRawTransaction(raw_tx_hex)
+```
 
 ## Bitcoin configurations..
 
