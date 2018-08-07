@@ -64,7 +64,7 @@ keyether = utils.encode_hex(private_key)
 ```
 
 
-## How to send ethereum using python.
+## How to send ether using python.
 ```shell
 from web3 import Web3, HTTPProvider, IPCProvider
 from ethereum.transactions import Transaction
