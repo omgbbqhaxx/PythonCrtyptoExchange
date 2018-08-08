@@ -78,6 +78,36 @@ raw_tx_hex = web3.toHex(raw_tx)
 web3.eth.sendRawTransaction(raw_tx_hex)
 ```
 
+
+
+
+## How to deposit ether using etherscan.io API.
+```shell
+http://api.etherscan.io/api?module=account&action=txlist&address=0xeb02fed51228b842fb00fb18c26fe84707cd28d7&startblock=0&endblock=99999999&sort=asc&apikey=GKQMITFG5YPAG1MA2B4P6KAXGVKMQHVVWV
+```
+
+```shell
+r = "http://api.etherscan.io/api?module=account&action=txlist&address=0xeb02fed51228b842fb00fb18c26fe84707cd28d7&startblock=0&endblock=99999999&sort=asc&apikey=GKQMITFG5YPAG1MA2B4P6KAXGVKMQHVVWV"
+r = requests.get(r)
+r = r.json()
+for i in r["result"]:
+    try:
+        UserHistory.objects.get(txhash=str(i["blockHash"])) <-  blockhash is important for avoid double deposit. you need save and check  #blockhash#
+    except UserHistory.DoesNotExist: #if blockhash is not registered on your database.
+        if(i["to"] == "0xeb02fed51228b842fb00fb18c26fe84707cd28d7"):
+            ethval = web3.fromWei(int(i["value"]), 'ether') #Convert ethers from WEİ.
+            acc.ethbalance = acc.ethbalance + ethval #increase user's ethereum balance.
+            acc.save()
+            uh = UserHistory(king=acc,txhash=str(i["blockHash"]),value=ethval,currencyname="ethereum") #save blockhash on your database! that important.
+            uh.save()
+        else:
+            pass
+```
+
+
+
+
+
 ## Bitcoin configurations..
 
 We are using [bit](https://github.com/ofek/bit) libraty for bitcoin.
