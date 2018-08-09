@@ -132,7 +132,11 @@ btc.to_wif() #Your [secret] private KEY!
 from bit import Key
 from bit import wif_to_key
 btc = Key('btcWİFkeyHere')
+key = wif_to_key('btcWİFkeyHere') #alternative usagement.
 btc.address #Your bitcoin address.
+#get user ethbalance
+btc.get_balance('usd') # Get accoun's usd balance.
+btc.get_balance('btc') #Get account's btc balance.
 ```
 
 
