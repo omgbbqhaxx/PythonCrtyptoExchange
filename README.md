@@ -123,8 +123,19 @@ from bit import Key
 btc = Key()
 btc.address #Your bitcoin address.
 btc.to_wif() #Your [secret] private KEY!
-
 ```
+
+
+### How to import btc wallet from key.
+
+```shell
+from bit import Key
+from bit import wif_to_key
+btc = Key('btcWİFkeyHere')
+btc.address #Your bitcoin address.
+```
+
+
 
 
 
