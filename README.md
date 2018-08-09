@@ -109,11 +109,21 @@ for i in r["result"]:
 
 
 ## Bitcoin configurations..
-
 We are using [bit](https://github.com/ofek/bit) libraty for bitcoin.
 
 ```shell
 pip install bit
+```
+
+# How to create a bitcoin wallet using python.
+
+```shell
+from bit import Key
+
+btc = Key()
+btc.address #Your bitcoin address.
+key.to_wif() #Your [secret] private KEY!
+
 ```
 
 
