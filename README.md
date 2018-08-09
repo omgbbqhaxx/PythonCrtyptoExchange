@@ -5,7 +5,7 @@ In this tutorial you will learn how to create a bitcoin and ethereum wallet with
 
 # <img src="https://github.com/omgbbqhaxx/PythonCrtyptoExchange/blob/master/images/UdemyBanner2.png">
 
-## Getting Started
+### Getting Started
 
 First of all, we will update our ubuntu system and make our system ready.
 
@@ -15,7 +15,7 @@ sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install vim -y
 
 
 
-## First of all install python version 3.0+
+### First of all install python version 3.0+
 
 ```shell
 sudo apt-get install --reinstall language-pack-en -y
@@ -49,7 +49,7 @@ pipenv install requests
 
 
 
-## How to create an ethereum wallet using python.
+### How to create an ethereum wallet using python.
 
 
 ```shell
@@ -64,7 +64,7 @@ keyether = utils.encode_hex(private_key)
 ```
 
 
-## How to send ether using python.
+### How to send ether using python.
 ```shell
 from web3 import Web3, HTTPProvider, IPCProvider
 from ethereum.transactions import Transaction
@@ -81,7 +81,7 @@ web3.eth.sendRawTransaction(raw_tx_hex)
 
 
 
-## How to deposit ether using etherscan.io API.
+### How to deposit ether using etherscan.io API.
 ```shell
 http://api.etherscan.io/api?module=account&action=txlist&address=0xeb02fed51228b842fb00fb18c26fe84707cd28d7&startblock=0&endblock=99999999&sort=asc&apikey=GKQMITFG5YPAG1MA2B4P6KAXGVKMQHVVWV
 ```
