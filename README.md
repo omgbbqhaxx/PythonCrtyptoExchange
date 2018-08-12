@@ -140,6 +140,15 @@ btc.get_balance('btc') #Get account's btc balance.
 ```
 
 
+### [How to send btc using python.](https://github.com/ofek/bit)
+
+```shell
+from bit import Key
+
+key = Key('btcWİFkeyHere')
+x = key.send([(targetwallet, test, 'btc')],fee=150)
+print(x)
+```
 
 
 
