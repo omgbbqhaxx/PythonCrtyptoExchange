@@ -147,9 +147,29 @@ btc.get_balance('btc') #Get account's btc balance.
 from bit import Key
 
 key = Key('btcWİFkeyHere')
+key.get_unspents()
 x = key.send([(targetwallet, amountasbtc, 'btc')],fee=100)
 print(x)
 ```
+
+
+
+### Satoshi to Currency & btc
+
+[Satoshi to Currency docs.](https://ofek.github.io/bit/guide/rates.html)
+```shell
+from bit import Key
+from bit.network import satoshi_to_currency_cached
+
+
+key = Key('btcWİFkeyHere')
+key.get_unspents()
+satoshi_to_currency_cached(1500, 'usd')
+satoshi_to_currency_cached(1500, 'btc')
+```
+
+
+https://ofek.github.io/bit/guide/rates.html
 
 
 
