@@ -140,8 +140,9 @@ btc.get_balance('btc') #Get account's btc balance.
 ```
 
 
-### [How to send btc using python.](https://github.com/ofek/bit)
+### How to send btc using python.
 
+[Bit developer docs.](https://github.com/ofek/bit)
 ```shell
 from bit import Key
 
