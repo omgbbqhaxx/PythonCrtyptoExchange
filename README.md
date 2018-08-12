@@ -147,7 +147,7 @@ btc.get_balance('btc') #Get account's btc balance.
 from bit import Key
 
 key = Key('btcWİFkeyHere')
-x = key.send([(targetwallet, test, 'btc')],fee=150)
+x = key.send([(targetwallet, amountasbtc, 'btc')],fee=100)
 print(x)
 ```
 
