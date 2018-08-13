@@ -178,7 +178,7 @@ txresult/TxHash/Address - Calculate the result of a transaction sent or received
 ```python
 from bit import Key
 from bit.network import satoshi_to_currency_cached
-
+import requests
 
 transactions = key.get_transactions()
 if(len(transactions) == 0):
