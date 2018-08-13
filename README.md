@@ -52,7 +52,7 @@ pipenv install requests
 ### How to create an ethereum wallet using python.
 
 
-```shell
+```python
 from ethereum import utils
 from eth_utils import address
 import os
@@ -65,7 +65,7 @@ keyether = utils.encode_hex(private_key)
 
 
 ### How to send ether using python.
-```shell
+```python
 from web3 import Web3, HTTPProvider, IPCProvider
 from ethereum.transactions import Transaction
 web3 = Web3(HTTPProvider('https://api.myetherapi.com/eth'))
@@ -86,7 +86,7 @@ web3.eth.sendRawTransaction(raw_tx_hex)
 http://api.etherscan.io/api?module=account&action=txlist&address=0xeb02fed51228b842fb00fb18c26fe84707cd28d7&startblock=0&endblock=99999999&sort=asc&apikey=GKQMITFG5YPAG1MA2B4P6KAXGVKMQHVVWV
 ```
 
-```shell
+```python
 r = "http://api.etherscan.io/api?module=account&action=txlist&address=0xeb02fed51228b842fb00fb18c26fe84707cd28d7&startblock=0&endblock=99999999&sort=asc&apikey=GKQMITFG5YPAG1MA2B4P6KAXGVKMQHVVWV"
 r = requests.get(r)
 r = r.json()
@@ -117,7 +117,7 @@ pip install bit
 
 ### How to create a bitcoin wallet using python.
 
-```shell
+```python
 from bit import Key
 
 btc = Key()
@@ -128,7 +128,7 @@ btc.to_wif() #Your [secret] private KEY!
 
 ### How to import btc wallet from key.
 
-```shell
+```python
 from bit import Key
 from bit import wif_to_key
 btc = Key('btcWİFkeyHere')
@@ -143,7 +143,7 @@ btc.get_balance('btc') #Get account's btc balance.
 ### How to send btc using python.
 
 [Bit developer docs.](https://github.com/ofek/bit)
-```shell
+```python
 from bit import Key
 
 key = Key('btcWİFkeyHere')
@@ -157,7 +157,7 @@ print(x)
 ### Satoshi to Currency & btc
 
 [Satoshi to Currency docs.](https://ofek.github.io/bit/guide/rates.html)
-```shell
+```python
 from bit import Key
 from bit.network import satoshi_to_currency_cached
 
@@ -173,7 +173,7 @@ satoshi_to_currency_cached(1500, 'btc')
 
 [blockchain.info API docs.](https://blockchain.info/q)
 
-txresult/TxHash/Address - Calculate the result of a transaction sent or received to Address. Multiple addresses separated by | 
+txresult/TxHash/Address - Calculate the result of a transaction sent or received to Address. Multiple addresses separated by |
 
 ```python
 from bit import Key
