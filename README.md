@@ -92,7 +92,7 @@ r = requests.get(r)
 r = r.json()
 for i in r["result"]:
     try:
-        UserHistory.objects.get(txhash=str(i["blockHash"])) <-  blockhash is important for avoid double deposit. you need save and check  #blockhash#
+        UserHistory.objects.get(txhash=str(i["blockHash"])) #  blockhash is important for avoid double deposit. you need save and check  #blockhash#
     except UserHistory.DoesNotExist: #if blockhash is not registered on your database.
         if(i["to"] == "0xeb02fed51228b842fb00fb18c26fe84707cd28d7"):
             ethval = web3.fromWei(int(i["value"]), 'ether') #Convert ethers from WEİ.
@@ -169,8 +169,42 @@ satoshi_to_currency_cached(1500, 'btc')
 ```
 
 
-https://ofek.github.io/bit/guide/rates.html
+### How to deposit bitcoin using bitcoin.info API.
 
+[blockchain.info API docs.](https://blockchain.info/q)
+
+txresult/TxHash/Address - Calculate the result of a transaction sent or received to Address. Multiple addresses separated by | 
+
+```python
+from bit import Key
+from bit.network import satoshi_to_currency_cached
+
+
+transactions = key.get_transactions()
+if(len(transactions) == 0):
+    pass
+try:
+    UserHistory.objects.get(txhash=str(transactions[0])) #
+except UserHistory.DoesNotExist:
+    for i in transactions:
+        r = 'https://blockchain.info/q/txresult/{0}/{1}'.format(TxHash,Address)
+        r = requests.get(r)
+        num = int(r.text)
+        if num > 0:
+            try:
+                UserHistory.objects.get(txhash=str(i))
+            except UserHistory.DoesNotExist:
+                #if dont have an any transaction
+                btcbal = Decimal(satoshi_to_currency_cached(num, 'btc'))
+                acc.btcbalance = acc.btcbalance + btcbal
+                acc.save()
+                uh = UserHistory(king=acc,txhash=str(i),value=num,currencyname="bitcoin")
+                uh.save()
+        else:
+           print("Negative number")
+    return render(request, "x.html", locals())
+print("nothing changed")
+```
 
 
 
@@ -179,12 +213,12 @@ https://ofek.github.io/bit/guide/rates.html
   * My ethereum wallet : `0xFBd6f9704478104f0EF3F4f9834c3621210fE598`
 
 
-  ## Contact
+## Contact
 
-  [![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/cloudbank-github/)
-  [![GitHub Issues](https://img.shields.io/badge/open%20issues-0-yellow.svg)](https://github.com/omgbbqhaxx/CloudBank/issues)
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/cloudbank-github/)
+[![GitHub Issues](https://img.shields.io/badge/open%20issues-0-yellow.svg)](https://github.com/omgbbqhaxx/CloudBank/issues)
 
-  - Report bugs, issues or feature requests using [GitHub issues](issues/new).
+- Report bugs, issues or feature requests using [GitHub issues](issues/new).
 
 
 
