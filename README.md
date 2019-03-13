@@ -23,7 +23,7 @@ export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
-sudo apt-get install python3.3
+sudo apt-get install python3.6
 sudo apt-get install python3-pip
 apt install python-pip
 pip install --upgrade virtualenv
@@ -35,14 +35,16 @@ We are using [pyethereum](https://github.com/ethereum/pyethereum), [web3py](http
  [eth-utils](https://github.com/ethereum/eth-utils) libraries for ethereum.
 
 ```shell
-virtualenv -p python3 venv
+virtualenv -p python3.6 venv
 cd venv
 . bin/activate
+sudo apt-get install python3.6-dev libmysqlclient-dev
 sudo apt-get install libssl-dev build-essential automake pkg-config libtool libffi-dev libgmp-dev libyaml-cpp-dev
 git clone https://github.com/ethereum/pyethereum/
 cd pyethereum
 python setup.py install
 git clone https://github.com/omgbbqhaxx/PythonCrtyptoExchange.git
+cd PythonCrtyptoExchange
 pip install -r requirements.txt
 pipenv install requests
 ```
